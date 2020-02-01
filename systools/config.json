@@ -1,0 +1,21 @@
+{
+    "AppName": "Tamata BME280 Station",
+    "Version": "1.0.0",
+    "Copyright": "Copyright Open Source - W3Licence",
+    "system": {
+        "user": "BME280STATION",
+        "id": "BME280STATION",
+        "mac": "ESP32",
+        "interval": 10,
+        "console": "",
+        "mqttServer": "172.24.1.1",
+        "mqttTopic": "bme280/update",
+        "influxDB": {
+            "database": "databme",
+            "host": "localhost",
+            "port": 8086,
+            "username": "test",
+            "password": "test"
+        }
+    }
+}
