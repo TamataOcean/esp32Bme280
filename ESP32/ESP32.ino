@@ -26,12 +26,13 @@ BME280 mySensor;
 const char* ssid     = "OiO";
 const char* password = "oceanisopen";
 const char* mqtt_server = "172.24.1.1";
+const char* mqtt_user = "BME280-Station1";
 const char* mqtt_output = "bme280/update";
 const char* mqtt_input = "bme280/input";
 const char* mqtt_log = "esp32/log";
 
 const int ledPin = 4;
-int timeInterval = 33000;
+int timeInterval = 3333;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -189,7 +190,7 @@ void loop() {
     
     Serial.println();
 
-    String json = "{\"user\":\"BME280STATION\",\"Humidity\":\""+(String)mySensor.readFloatHumidity()+"\",\"Pressure\":\""+(String)mySensor.readFloatPressure()+"\",\"Altitude\":\""+(String)mySensor.readFloatAltitudeMeters()+"\",\"Temperature\":\""+(String)mySensor.readTempC()+"\"}";
+    String json = "{\"user\":\""+ (String) mqtt_user +"\",\"Humidity\":\""+(String)mySensor.readFloatHumidity()+"\",\"Pressure\":\""+(String)mySensor.readFloatPressure()+"\",\"Altitude\":\""+(String)mySensor.readFloatAltitudeMeters()+"\",\"Temperature\":\""+(String)mySensor.readTempC()+"\"}";
     client.publish(mqtt_output, json.c_str() );
     Serial.println("publishing on " + (String)mqtt_output);
     Serial.println(json);
