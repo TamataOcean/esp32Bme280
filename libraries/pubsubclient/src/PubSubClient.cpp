@@ -303,7 +303,6 @@ uint32_t PubSubClient::readPacket(uint8_t* lengthLength) {
 
     if (!this->stream && idx > MQTT_MAX_PACKET_SIZE) {
         len = 0; // This will cause the packet to be ignored.
-        Serial.println("Packet ignored");
     }
 
     return len;
