@@ -10,5 +10,6 @@ Follow this [link](https://randomnerdtutorials.com/installing-the-esp32-board-in
 # Electrical Schema
 ![ESP32_BME280_bb](https://user-images.githubusercontent.com/25310798/76417851-e880ec80-639d-11ea-9e58-7f72f85eec3c.png))
 
-
+# Grafana Stats
+![Grafana_-_BME280_Sensor](https://user-images.githubusercontent.com/25310798/76433238-5801d680-63b4-11ea-8353-58bfb3c424d8.jpg)
 
