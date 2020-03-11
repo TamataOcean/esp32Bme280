@@ -1,6 +1,7 @@
 # Raspi Install
 
 ### Access Point
+[Procedure here](https://thepi.io/how-to-use-your-raspberry-pi-as-a-wireless-access-point/)
 
 ### Install InfluxDB - Grafana
 [OLD Procedure here](https://github.com/TamataOcean/TamataSpiru/wiki/Install-Influx,-Graphana)
