@@ -18,9 +18,10 @@ File > Preference >
 ### First launch 
 Open the ESP32Bme280.ino  
 Connect the ESP32 with USB port  
+Configure SSID, Password & MQTT_IP_SERVER
 Compile & Launch 
 
-![ESP32Bme280_INO_Code](https://user-images.githubusercontent.com/25310798/76503107-7d8af080-6445-11ea-8c49-7a35d08f3024.jpg)
+![Config_Arduino_Client_For_ESP32](https://user-images.githubusercontent.com/25310798/76503487-4c5ef000-6446-11ea-92b3-def1f87c8c99.jpg)
 
 #### Console Log result
 ![Console_Log_Arduino](https://user-images.githubusercontent.com/25310798/76503188-b2974300-6445-11ea-8ea9-87c9dea87004.jpg)
