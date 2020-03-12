@@ -11,7 +11,6 @@ Tutorial to use ESP32 to send Temperature, Humidity, Pressure information other 
 ![ESP32_BME280_bb](https://user-images.githubusercontent.com/25310798/76417851-e880ec80-639d-11ea-9e58-7f72f85eec3c.png))
 
 # Install Arduino lib for ESP32
+[Procedure here](https://github.com/TamataOcean/esp32Bme280/tree/master/Arduino)
 
-[Windows config follow this link](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/) 
-
-[Linux & MacOs follow this link](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-mac-and-linux-instructions/) 
+# Install & Configure Raspberry 
