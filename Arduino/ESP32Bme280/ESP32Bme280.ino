@@ -23,16 +23,16 @@
 #include "SparkFunBME280.h"
 BME280 mySensor;
 
-const char* ssid     = "WIFI SSID";
+const char* ssid     = "WifiRaspi";
 const char* password = "password";
-const char* mqtt_server = "MQTT_IP_ADDRESS";
+const char* mqtt_server = "10.3.141.1";
 const char* mqtt_user = "BME280-Station1";
 const char* mqtt_output = "bme280/update";
 const char* mqtt_input = "bme280/input";
 const char* mqtt_log = "esp32/log";
 
 const int ledPin = 4;
-int timeInterval = 3333;
+int timeInterval = 30000;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
