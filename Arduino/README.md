@@ -31,4 +31,5 @@ Compile & Launch
 
 ##### Driver Ressource for USB Driver
 [USB TO UART Bridge](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
+[CH 340 Driver](http://283.mytrademe.info/ch340.html)
 
