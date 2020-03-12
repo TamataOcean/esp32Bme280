@@ -33,7 +33,7 @@ class TamataInfluxDB {
                   Pressure:    FieldType.FLOAT,
                   Temperature:    FieldType.FLOAT
                },
-               tags: [ 'sensor' ]
+               tags: [ 'sensor', 'user' ]
                }
             ]
          });
@@ -66,16 +66,16 @@ class TamataInfluxDB {
       // body...
    }
 
-   saveSensor(jsonRecord, jsonPosition ) {    
+   saveSensor(jsonRecord ) {    
       this.influx.writePoints([
          {
-         tags: { sensor: "teensySensors" },
+         tags: { sensor: "BME280", user: jsonRecord.user },
          measurement : "sensor",
          fields: { 
             user :         jsonRecord.user,
-            Humidity:            jsonRecord.Humidity,
-            Pressure:            jsonRecord.Pressure,
-            Temperature:            jsonRecord.Temperature
+            Humidity:      jsonRecord.Humidity,
+            Pressure:      jsonRecord.Pressure,
+            Temperature:   jsonRecord.Temperature
             }  
          }]).catch(err => {
             console.error(`Error saving Sensor data to InfluxDB! ${err.stack}`);
