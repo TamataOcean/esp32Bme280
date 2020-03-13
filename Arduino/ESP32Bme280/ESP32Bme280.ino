@@ -24,15 +24,15 @@
 BME280 mySensor;
 
 const char* ssid     = "WifiRaspi";
-const char* password = "password";
-const char* mqtt_server = "10.3.141.1";
+const char* password = "wifiraspi";
+const char* mqtt_server = "172.24.1.1";
 const char* mqtt_user = "BME280-Station1";
 const char* mqtt_output = "bme280/update";
 const char* mqtt_input = "bme280/input";
 const char* mqtt_log = "esp32/log";
 
 const int ledPin = 4;
-int timeInterval = 30000;
+int timeInterval = 10000;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
