@@ -25,3 +25,11 @@ Compile & Launch
 
 #### Console Log result
 ![Console_Log_Arduino](https://user-images.githubusercontent.com/25310798/76503188-b2974300-6445-11ea-8ea9-87c9dea87004.jpg)
+
+#### AZDelivery Pin OUT...
+![ESP32-DOIT-DEVKIT-V1-Board-Pinout-36-GPIOs-updated](https://user-images.githubusercontent.com/25310798/76535881-dffee380-647b-11ea-9cc1-0aa3fd092c9f.jpg)
+
+##### Driver Ressource for USB Driver
+[USB TO UART Bridge](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)  
+[CH 340 Driver](http://283.mytrademe.info/ch340.html)
+

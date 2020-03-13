@@ -1,36 +1,80 @@
-# Raspi Install
+# PROCUDRE TO INSTALL Fonctionnal components ( hostapd, mosquitto, grafana, influxdb... )
 
-### Access Point
-[Procedure here](https://thepi.io/how-to-use-your-raspberry-pi-as-a-wireless-access-point/)
+connect to your Raspi with  
+>
+    ssh pi@RASPI_IP_ADDRESS + password ( defautl = raspberry )  
+and execute the following commands  
 
-### Install InfluxDB - Grafana
-[OLD Procedure here](https://github.com/TamataOcean/TamataSpiru/wiki/Install-Influx,-Graphana)
+# Install Access Point with Hostapd & dnsmasq ( [Using this repository](https://github.com/TamataOcean/rpi_wifi_direct.git) )
+Configure AP SSID = WifiRaspi  
+Password = raspberry  
+IP = 172.24.1.1  
 
+>
+    sudo -s
+    mkdir /home/pi/code
+    cd /home/pi/code
+    wget -P /home/pi/code https://raw.githubusercontent.com/TamataOcean/rpi_wifi_direct/master/raspberry_pi4/install_wifi_direct.sh
+    chmod +x /home/pi/code/install_wifi_direct.sh
+    bash -x /home/pi/code/install_wifi_direct.sh
 
-### Mosquitto Server & Client Install
+# Install InfluxDB on Raspi 4 ( Buster ) : [Source here](https://computingforgeeks.com/install-influxdb-on-debian-10-buster-linux/)
+#### Add InfluxDB APT repository.
+     sudo apt update
+     sudo apt install -y gnupg2 curl wget
+     wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+     echo "deb https://repos.influxdata.com/debian buster stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+
+#### Once the repository is added, install InfluxDB on Debian 10 (Buster) Linux:
+     sudo apt update
+     sudo apt install -y influxdb
+
+InfluxDB default configuration file is located under /etc/influxdb/influxdb.conf. Most sections are commented out, you can modify it to your liking and restart influxdb service after.
+
+#### Start and enable the service to start on boot up.
+
+     sudo systemctl enable --now influxdb
+
+# Install Grafana
+>
+    echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
+    wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+    sudo apt-get update
+    sudo apt-get install apt-transport-https
+    sudo apt-get install -y grafana
+    sudo update-rc.d grafana defaults
+    sudo systemctl daemon-reload
+    sudo systemctl enable grafana.service
+    sudo systemctl unmask grafana
+    sudo systemctl enable grafana-server
+    sudo systemctl start grafana-server
+
+# Install Mosquitto Server & Client Install
 
 >     
-     sudo apt-get install mosquitto
+     sudo apt-get install -y mosquitto
      wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
      sudo apt-key add mosquitto-repo.gpg.key
      cd /etc/apt/sources.list.d/
-     sudo wget http://repo.mosquitto.org/debian/mosquitto-wheezy.list
-     sudo -i 
-     apt-get update 
-     apt-get install mosquitto 
-     apt-get install mosquitto-clients
+     sudo wget http://repo.mosquitto.org/debian/mosquitto-buster.list
+     #sudo -i 
+     sudo apt-get update 
+     sudo apt-get install -y mosquitto
+     sudo apt-get install -y mosquitto-clients
+     cd
 
-### NodeJS
->
-     curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
-     sudo apt install nodejs
-     node --version
-Should see : v10.16.0
+# Install NodeJS
+    curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+    sudo apt-get install -y nodejs
 
-## Install esp32Bme280 Service
-     git clone https://github.com/TamataOcean/esp32Bme280.git
-     cd esp32Bme280/systools
-     npm install
+# Install Systools service for BME280
+    cd
+    mkdir code
+    cd code/
+    git clone https://github.com/TamataOcean/esp32Bme280.git
+    cd esp32Bme280/systools/
+    npm install
+    cd
 
 ### save_data.js
 In charge of listening Mosquitto, when a message arrive, keeping BME280 Sensor information and push to InfluxDB 
