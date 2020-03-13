@@ -1,3 +1,4 @@
+# PROCUDRE TO INSTALL Fonctionnal components ( hostapd, mosquitto, grafana, influxdb... )
 
 connect to your Raspi with  
 >
