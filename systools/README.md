@@ -23,7 +23,7 @@
 ### NodeJS
 >
      curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
-     sudo apt install nodejs
+     sudo apt-get install -y nodejs
      node --version
 Should see : v10.16.0
 
