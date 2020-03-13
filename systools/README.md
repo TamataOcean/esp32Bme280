@@ -1,4 +1,9 @@
-# Raspi Install
+
+connect to your Raspi with  
+>
+    ssh pi@RASPI_IP_ADDRESS + password ( defautl = raspberry )  
+and execute the following commands  
+
 # Install Access Point with Hostapd & dnsmasq ( [Using this repository](https://github.com/TamataOcean/rpi_wifi_direct.git) )
 Configure AP SSID = WifiRaspi  
 Password = raspberry  
